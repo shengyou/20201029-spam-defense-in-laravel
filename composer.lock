@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f79193f8425f8cc7a78c72eb75a387b",
+    "content-hash": "e59b9d8c5dbd58f1c4b8871016109273",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1556,6 +1556,62 @@
                 }
             ],
             "time": "2020-10-23T06:02:30+00:00"
+        },
+        {
+            "name": "nickurt/laravel-akismet",
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nickurt/laravel-akismet.git",
+                "reference": "2e4d8f516b8f3bce1a0d548d007afab3b36069e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nickurt/laravel-akismet/zipball/2e4d8f516b8f3bce1a0d548d007afab3b36069e5",
+                "reference": "2e4d8f516b8f3bce1a0d548d007afab3b36069e5",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3|^7.0.1",
+                "laravel/framework": "^6.0|^7.0|^8.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0|^5.0|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "nickurt\\Akismet\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Akismet": "nickurt\\Akismet\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "nickurt\\Akismet\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Akismet for Laravel 6.x/7.x/8.x",
+            "keywords": [
+                "Akismet",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/nickurt/laravel-akismet/issues",
+                "source": "https://github.com/nickurt/laravel-akismet/tree/1.9.0"
+            },
+            "time": "2020-09-18T10:37:41+00:00"
         },
         {
             "name": "nikic/php-parser",
