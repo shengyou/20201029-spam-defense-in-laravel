@@ -16,6 +16,7 @@ class Feedback extends Model
         'email',
         'mobile',
         'message',
+        'flag_as_spam',
     ];
 
     protected $casts = [
@@ -23,5 +24,6 @@ class Feedback extends Model
         'email' => 'string',
         'mobile' => 'string',
         'message' => 'string',
+        'flag_as_spam' => 'boolean',
     ];
 }
