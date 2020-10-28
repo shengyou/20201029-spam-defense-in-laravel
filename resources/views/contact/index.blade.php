@@ -29,14 +29,7 @@
             <div class="col-lg-8 mb-4">
                 <h3></h3>
 
-                @isset($message)
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>成功送出！</strong> {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                @endisset
+                @include('layouts.partials.flash-message')
 
                 <form action="{{ route('contact.store') }}" method="POST">
 
