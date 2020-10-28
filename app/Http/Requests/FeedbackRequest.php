@@ -28,6 +28,7 @@ class FeedbackRequest extends FormRequest
             'email' => 'required|email',
             'mobile' => 'nullable|min:10|max:10',
             'message' => 'required',
+            'g-recaptcha-response' => 'recaptchav3:contact,0.5'
         ];
     }
 }

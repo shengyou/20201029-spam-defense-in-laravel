@@ -134,6 +134,10 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'g-recaptcha-response' => [
+            'recaptchav3' => '我說各位啊！你再送 SPAM 給我試試啊！',
+        ],
     ],
 
     /*
