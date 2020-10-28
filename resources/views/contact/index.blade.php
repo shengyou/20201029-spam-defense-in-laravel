@@ -36,6 +36,8 @@
                     @method('POST')
                     @csrf
 
+                    @honeypot
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label for="name">姓名 <span style="color: red">*</span></label>
