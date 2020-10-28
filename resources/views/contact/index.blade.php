@@ -28,37 +28,62 @@
         <div class="row">
             <div class="col-lg-8 mb-4">
                 <h3></h3>
-                <form name="sentMessage" id="contactForm" novalidate>
+
+                @isset($message)
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>成功送出！</strong> {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endisset
+
+                <form action="{{ route('contact.store') }}" method="POST">
+
+                    @method('POST')
+                    @csrf
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label for="name">姓名 <span style="color: red">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                            <p class="invalid-feedback" style="display: inline">Please enter your name.</p>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                            @error('name')
+                            <p class="invalid-feedback" style="display: inline">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label for="email">Email <span style="color: red">*</span></label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                            <p class="invalid-feedback" style="display: inline">Please enter your email address.</p>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                            @error('email')
+                            <p class="invalid-feedback" style="display: inline">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label for="mobile">手機</label>
                             <input type="tel" class="form-control" id="mobile" name="mobile">
+                            @error('mobile')
+                            <p class="invalid-feedback" style="display: inline">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
+
                     <div class="control-group form-group">
                         <div class="controls">
                             <label for="message">建議與問題 <span style="color: red">*</span></label>
                             <textarea rows="10" cols="100" class="form-control" id="message" name="message" required
-                                      maxlength="999" style="resize:none"></textarea>
-                            <p class="invalid-feedback" style="display: inline">Please enter your message.</p>
+                                      maxlength="999" style="resize:none">{{ old('message') }}</textarea>
+                            @error('message')
+                            <p class="invalid-feedback" style="display: inline">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
-                    <div id="success"></div>
-                    <!-- For success/fail messages -->
+
                     <button type="submit" class="btn btn-primary">
                         送出
                     </button>
