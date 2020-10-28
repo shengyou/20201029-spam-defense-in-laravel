@@ -3,6 +3,9 @@
 @section('page-title', '聯絡我們')
 
 @section('page-style')
+<style>
+    .grecaptcha-badge { visibility: hidden; }
+</style>
 @endsection
 
 @section('page-script')
@@ -79,6 +82,10 @@
                             @enderror
                         </div>
                     </div>
+
+                    @if ($errors->get('g-recaptcha-response'))
+                        <p class="invalid-feedback" style="display: inline">{{ $errors->first('g-recaptcha-response') }}</p>
+                    @endif
 
                     <button type="submit" class="btn btn-primary">
                         送出
