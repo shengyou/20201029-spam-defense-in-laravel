@@ -10,6 +10,7 @@
 <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
 {{--<script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>--}}
 {{--<script src="{{ asset('js/contact_me.js') }}"></script>--}}
+{!! RecaptchaV3::initJs() !!}
 @endsection
 
 @section('page-content')
@@ -35,6 +36,8 @@
 
                     @method('POST')
                     @csrf
+
+                    {!! RecaptchaV3::field('contact') !!}
 
                     <div class="control-group form-group">
                         <div class="controls">
@@ -81,6 +84,9 @@
                         送出
                     </button>
                 </form>
+                <div>
+                    This site is protected by ReCaptcha and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+                </div>
             </div>
             <!-- Contact Details Column -->
             <div class="col-lg-4 mb-4">
