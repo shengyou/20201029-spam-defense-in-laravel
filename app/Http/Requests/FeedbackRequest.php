@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use nickurt\Akismet\Rules\AkismetRule;
 
 class FeedbackRequest extends FormRequest
 {
@@ -28,6 +29,10 @@ class FeedbackRequest extends FormRequest
             'email' => 'required|email',
             'mobile' => 'nullable|min:10|max:10',
             'message' => 'required',
+            'akismet' => [new AkismetRule(
+                request()->input('email'),
+                request()->input('name')
+            )]
         ];
     }
 }
