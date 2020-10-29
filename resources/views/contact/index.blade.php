@@ -77,6 +77,12 @@
                         </div>
                     </div>
 
+                    <input type="hidden" name="akismet" value="akismet">
+
+                    @error('akismet')
+                    <p class="invalid-feedback" style="display: inline">{{ $message }}</p>
+                    @enderror
+
                     <button type="submit" class="btn btn-primary">
                         送出
                     </button>
